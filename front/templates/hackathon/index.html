@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+        * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.lmn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+      }
+      .left {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+      }
+      .right {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hackathon-name {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 30px;
+      }
+      .btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+      .create-btn,
+      .join-btn {
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 10px;
+      }
+      .details-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .details {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      .hackathon-img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+#logout-btn {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+#logout-btn:hover {
+  background-color: #d63027;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 10px;
+}
+    </style>
+  </head>
+    <header>
+      <h1>HMS</h1>
+      <button id="logout-btn">Logout</button>
+    </header>
+    <main  class="lmn">
+        <div class="left">
+            <div class="hackathon-name">{{ hack.name }}</div>
+            <div class="btn-container">
+              <button class="create-btn">Create Team</button>
+              <button class="join-btn">Join Team</button>
+            </div>
+            <div class="details-container">
+                <div class="details">Date: {{ hack.start_date }}</div>
+                <div class="details">Start Time: {{ hack.start_date }}</div>
+                <div class="details">End Time: {{ hack.end_date }}</div>
+              <div class="details">Location: Virtual</div>
+            </div>
+          </div>
+          <div class="right">
+            <img class="hackathon-img" src="/Users/shruti/Downloads/networkX-main/front/bg.png" alt="Hackathon Image">
+          </div>
+    </main>
+    {% endblock %}

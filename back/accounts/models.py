@@ -2,10 +2,10 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
-    college_name = models.CharField(max_length=128)
-    graduation_completion = models.DateField()
-    address = models.CharField(max_length=255)
-    city = models.CharField(max_length=64)
+    college_name = models.CharField(max_length=128, default="")
+    graduation_completion = models.DateField(null=True, blank=True)
+    address = models.CharField(max_length=255, default="")
+    city = models.CharField(max_length=64, default='')
     t_shirt_size = models.CharField(max_length=3, null=True, blank=True)
 
     linkedin_url = models.URLField(null=True, blank=True)
