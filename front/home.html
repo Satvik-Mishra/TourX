@@ -3,6 +3,10 @@
 
 <head>
     <style>
+        body {
+            background-image: url("bg.png");
+        }
+        
         .img {
             border: purple;
         }
@@ -11,7 +15,17 @@
             width: 45%;
             display: inline-block;
             vertical-align: top;
-            margin: 4%
+            margin: 4%;
+        }
+        
+        .card-body {
+            background-color: orange;
+        }
+        
+        .lg {
+            background: linear-gradient(pink, purple);
+            font-size: 4em;
+            color: antiquewhite;
         }
         
         .card-container {
@@ -22,6 +36,13 @@
         .container2 {
             margin: 2%;
             display: flex;
+        }
+        
+        .card:hover {
+            transition: 0.1s;
+            transform: scale(1.1);
+            border-color: aqua;
+            border-width: 0.8em;
         }
     </style>
 
@@ -75,10 +96,10 @@
             <h1>Hackathon</h1>
         </div>
         <div>
-            <h3>Upcoming Hackathons:</h3>
+            <h1 class="lg">Upcoming Hackathons:</h3>
         </div>
         <div class="card-container">
-            <div class="card" style="width:45%;">
+            <div class="card" style="width:38%;">
 
                 <img src="https://media.istockphoto.com/id/1365132642/photo/finance-business-graph-chart-data-report-crypto-blockchain-trading-expertise-advisor.jpg?b=1&s=612x612&w=0&k=20&c=ZAn9YklqeJpdahYSYujuY4QdF1XUSPbHm3JN3G2aZS8=" class="card-img-top" alt="...">
                 <div class="card-body">
@@ -96,7 +117,7 @@
                 </div>
             </div>
             <br>
-            <div class="card" style="width: 45%;">
+            <div class="card" style="width: 38%;">
                 <img src="https://media.istockphoto.com/id/1365132642/photo/finance-business-graph-chart-data-report-crypto-blockchain-trading-expertise-advisor.jpg?b=1&s=612x612&w=0&k=20&c=ZAn9YklqeJpdahYSYujuY4QdF1XUSPbHm3JN3G2aZS8=" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -120,7 +141,7 @@
 
 
         <div class="container2">
-            <div class="card" id="card" style="width: 45%;">
+            <div class="card" id="card" style="width: 38%;">
                 <img src="https://media.istockphoto.com/id/1365132642/photo/finance-business-graph-chart-data-report-crypto-blockchain-trading-expertise-advisor.jpg?b=1&s=612x612&w=0&k=20&c=ZAn9YklqeJpdahYSYujuY4QdF1XUSPbHm3JN3G2aZS8=" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -136,7 +157,7 @@
                     <a href="#" class="card-link">Another link</a>
                 </div>
             </div>
-            <div class="card" id="card" style="width: 45%;">
+            <div class="card" id="card" style="width: 38%;">
                 <img src="https://media.istockphoto.com/id/1365132642/photo/finance-business-graph-chart-data-report-crypto-blockchain-trading-expertise-advisor.jpg?b=1&s=612x612&w=0&k=20&c=ZAn9YklqeJpdahYSYujuY4QdF1XUSPbHm3JN3G2aZS8=" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
