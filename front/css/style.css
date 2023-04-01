@@ -8235,31 +8235,6 @@ h1, h2, h3, h4, h5,
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s; }
-  @media (prefers-reduced-motion: reduce) {
-    .form-control {
-      -webkit-transition: none;
-      -o-transition: none;
-      transition: none; } }
-  .form-control::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: rgba(255, 255, 255, 0.8) !important; }
-  .form-control::-moz-placeholder {
-    /* Firefox 19+ */
-    color: rgba(255, 255, 255, 0.8) !important; }
-  .form-control:-ms-input-placeholder {
-    /* IE 10+ */
-    color: rgba(255, 255, 255, 0.8) !important; }
-  .form-control:-moz-placeholder {
-    /* Firefox 18- */
-    color: rgba(255, 255, 255, 0.8) !important; }
-  .form-control:hover, .form-control:focus {
-    background: transparent;
-    outline: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border-color: rgba(255, 255, 255, 0.4); }
-  .form-control:focus {
-    border-color: rgba(255, 255, 255, 0.4); }
 
 textarea.form-control {
   height: inherit !important; }

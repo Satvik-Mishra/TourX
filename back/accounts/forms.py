@@ -4,12 +4,17 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class UserRegisterForm(UserCreationForm):
+class UserRegisterForm(forms.ModelForm):
     email = forms.EmailField()
 
     class Meta:
         model= User
-        fields = ['username', 'email', 'password1', 'password2', 'first_name', 
-                  'last_name', 'college_name', 'graduation_completion',
-                  'address', 'city', 't_shirt_size', 'linkedin_url', 'github_url', 
-                  'is_superuser',]
+        widgets = {
+            "graduation_completion": forms.DateInput(
+                attrs={'type': 'date'}
+                ),
+        }
+        fields = ['username', 'email', 'password', 'first_name', 
+              'last_name', 'college_name', 'graduation_completion',
+              'address', 'city', 't_shirt_size', 'linkedin_url', 'github_url', 
+         ]
