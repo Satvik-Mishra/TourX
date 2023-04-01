@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+        * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+#logout-btn {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+#logout-btn:hover {
+  background-color: #d63027;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+}
+
+button[type="submit"] {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <main>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="hackathon-name">Hackathon Name</label>
+              <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" name="description"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="upload-image">Upload Image</label>
+              <input type="file" id="logo" name="logo">
+            </div>
+            <div class="form-group">
+              <label for="registration-start">Registration Start</label>
+              <input type="datetime-local" id="start_date" name="start_date">
+            </div>
+            <div class="form-group">
+              <label for="registration-end">Registration End</label>
+              <input type="datetime-local" id="end_date" name="end_date">
+            </div>
+            <div class="form-group">
+              <label for="max-team-members">Maximum Number of Team Members</label>
+              <input type="number" id="max_members" name="max_members">
+            </div>
+            <div class="form-group">
+              <label for="min-team-members">Minimum Number of Team Members</label>
+              <input type="number" id="min_members" name="min_members">
+            </div>
+            <button type="submit">Submit</button>
+          </form>
+    </main>
+    <footer>
+      <p>&copy; 2023 HMS</p>
+    </footer>
+    {% endblock %}
