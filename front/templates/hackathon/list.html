@@ -28,6 +28,7 @@
   
   body {
     font-family: Arial, sans-serif;
+    color: white;
   }
   
   header {
@@ -141,13 +142,15 @@
       <div class='hacks' style="display: flex;">
       {% for hack in hacks %}
           <div class="card">
-            <img src="/front/bg.png" alt="Hackathon Image">
+            {% if hack.logo %}
+              <img src="{{ hack.logo.url }}" alt="Hackathon Image">
+            {% endif %}
             <div class="hackathon-details">
                 <h2>{{ hack.name }}</h2>
               <p id="h_date">Start Date: <span>{{ hack.start_date }}</span></p>
               <p id="h_time">End Date: <span>{{ hack.end_date }}</span></p>
               <p id="h_loc">Location: <span>{{ hack.address }}</span></p>
-              <p>Registrations Received: <span>{{ hack.no_of_teams }}</span></p>
+              <p>Registrations Received: <span>{{ hack.team_count }}</span></p>
               <a href="{% url 'index-hackathon' hack.id %}" class="view-more">View More</a>
             </div>
           </div>
@@ -158,13 +161,13 @@
         <div class='hacks' style="display: flex;">
         {% for hack in previous_hacks %}
         <div class="card">
-          <img src="/front/bg.png" alt="Hackathon Image">
+            <img src="{{ hack.logo }}" alt="Hackathon Image">
           <div class="hackathon-details">
               <h2>{{ hack.name }}</h2>
               <p id="h_date">Start Date: <span>{{ hack.start_date }}</span></p>
               <p id="h_time">End Date: <span>{{ hack.end_date }}</span></p>
               <p id="h_loc">Location: <span>{{ hack.address }}</span></p>
-              <p>Registrations Received: <span>{{ hack.no_of_teams }}</span></p>
+              <p>Registrations Received: <span>{{ hack.team_count }}</span></p>
               <a href="{% url 'index-hackathon' hack.id %}" class="view-more">View More</a>
           </div>
         </div>
