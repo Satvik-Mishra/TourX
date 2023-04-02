@@ -114,11 +114,10 @@ input[type="text"]:focus, input[type="file"]:focus {
 <br>
 <br>
 <br>
-      <p>Team Name: {{ team.name }}</p>
-      {% for m in members %}
-          <li class='details'>{{m.username}}
-              {% if m.keyword_rating %}
-                Rating: <b>{{ m.keyword_rating }}</b></li>
+        {% if not ratings %}
+            <label for="team-name">No Participants to shortlist</label>
         {% endif %}
-      {% endfor %}
+        {% for rating in ratings %}
+          <li class='details'>{{rating}}/10</li>
+          {% endfor %}
 {% endblock %}
