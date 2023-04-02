@@ -8,6 +8,7 @@ from hackathon.views import (
     create_team,
     join_team,
     keyword_rater,
+    admin_rater,
 )
 
 urlpatterns = [
@@ -18,4 +19,5 @@ urlpatterns = [
     path("<int:pk>/join-team/", join_team, name="join-team"),
     path("<int:pk>/team/", index_team, name="index-team"),
     path('<int:pk>/keyword_rater/', keyword_rater, name='keyword-rater'),
+    path('<int:pk>/admin_rater/', admin_rater, name='admin-rater'),
 ]

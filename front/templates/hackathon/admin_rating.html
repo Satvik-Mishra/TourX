@@ -107,18 +107,10 @@ input[type="text"]:focus, input[type="file"]:focus {
 .submit-button:hover {
   background-color: #39943e;
 }
-
  </style>
   </head>
   <body>
 <br>
 <br>
 <br>
-      <p>Team Name: {{ team.name }}</p>
-      {% for m in members %}
-          <li class='details'>{{m.username}}
-              {% if m.keyword_rating %}
-                Rating: <b>{{ m.keyword_rating }}</b></li>
-        {% endif %}
-      {% endfor %}
 {% endblock %}

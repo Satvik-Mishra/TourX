@@ -110,19 +110,21 @@ p {
 }
     </style>
   </head>
-    <header>
-      <h1>HMS</h1>
-      <button id="logout-btn">Logout</button>
-    </header>
     <main  class="lmn">
         <div class="left">
-            <div class="hackathon-name">{{ hack.name }}</div>
+          <div class="hackathon-name">{{ hack.name }}</div>
+            <div class="btn-container">
+          {% if user.is_superuser %}
+              <a href="{% url 'keyword-rater' hack.id %}"><button class='create-btn'>Keyword Rate</button></a>
+              <a href="{% url 'admin-rater' hack.id %}"><button class='join-btn'>Admin Rater</button></a>
+              {% else %}
             <div class="btn-container">
                 <a href="{% url 'create-team' hack.id %}"><button class="create-btn">Create Team</button></a>
-                <a href="{% url 'join-team' hack.id %}"<button class="join-btn">Join Team</button></a>
+                <a href="{% url 'join-team' hack.id %}"><button class="join-btn">Join Team</button></a>
+          {% endif %}
+            </div>
             </div>
             <div class="details-container">
-                <div class="details">Date: {{ hack.start_date }}</div>
                 <div class="details">Start Time: {{ hack.start_date }}</div>
                 <div class="details">End Time: {{ hack.end_date }}</div>
                 <div class='details'>Registrations Received: <span>{{ hack.team_count }}</span></div>
@@ -134,8 +136,5 @@ p {
               <img class="hackathon-img" src="{{ hack.logo.url }}" alt="Hackathon Image">
               {% endif %}
           </div>
-          {% if user.is_superuser %}
-          <a href="{% url 'keyword-rater' hack.id %}"><button>Rate Teams</button></a>
-          {% endif %}
     </main>
     {% endblock %}
