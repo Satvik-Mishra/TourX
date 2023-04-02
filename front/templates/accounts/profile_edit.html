@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">HRS</h2>
+				</div>
+			</div>
+		     <h3 class="mb-4 text-center">Profile</h3>
+             <form method='POST' enctype="multipart/form-data">
+                 {% csrf_token %}
+                <fieldset class="form-group">
+                    {{ form.as_p }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-info" type="submit">Update</button>
+                </div>
+	         </form>
+		</div>
+	</section>
+    {% endblock %}
+

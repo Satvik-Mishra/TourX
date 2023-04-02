@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block body %}
+    <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Style the header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+/* Style the H1 title */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style the Logout button */
+#logout-btn {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style the Logout button on hover */
+#logout-btn:hover {
+  background-color: #ddd;
+}
+
+/* Style the form container */
+.application-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Style the form groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Style the labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Style the input fields */
+input[type="text"], input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  font-size: 16px;
+  color: #555;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  transition: border-bottom 0.3s ease;
+}
+
+/* Style the input fields on focus */
+input[type="text"]:focus, input[type="file"]:focus {
+  border-bottom: 2px solid #4CAF50;
+  outline: none;
+}
+.submit-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style the Submit button on hover */
+.submit-button:hover {
+  background-color: #39943e;
+}
+
+ </style>
+  </head>
+  <body>
+    <header>
+      <h1>HMS</h1>
+      <button id="logout-btn">Logout</button>
+    </header>
+<br>
+<br>
+<br>
+    <form method='POST' class="application-form">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="team-name">Team Code:</label>
+        <input type="text" id="code" name="code" required>
+      </div>
+      <div class="form-group">
+        <label for="resume-upload">Resume Upload:</label>
+        <div class="file-input-container">
+          <input type="file" id="resume-upload" name="resume-upload" accept=".pdf,.doc,.docx" >
+        </div>
+      </div>
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+{% endblock %}
