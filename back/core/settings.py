@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import environ
 
@@ -38,7 +39,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [Path(__file__).resolve().parent.parent.parent/"front/templates/"],
+        "DIRS": [Path(__file__).resolve().parent.parent.parent / "front/templates/"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -87,14 +88,17 @@ USE_TZ = True
 
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [str(BASE_DIR.parent/ "front")]
+STATICFILES_DIRS = [str(BASE_DIR.parent / "front")]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "accounts.User"
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = "/"
