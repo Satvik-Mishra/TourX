@@ -120,16 +120,23 @@ h1 {
     {% if user.is_superuser %}
     <a href="{% url 'create-hack' %}">Create hackathon</a>
     {% endif %}
-    <nav class="navbar navbar-fixed-top navbar-default">
-      <div class="container">
+    <nav class="navbar navbar-fixed-top navbar-default" style="display: block; height: 10px; margin-left: 5px;">
+      
+        <a class="navbar-brand" href="#" style=" display: flex; margin-left: 0px; font-weight: bolder; font-size: 18px;">Resume shortlister</a>
+         
         <div class="navbar-header">
+           
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expand ed="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-          <a class="navbar-brand" href="#">Toolbox</a>
+           </div>
+          </div>
+          <a class="navbar-brand" href="{% url 'home' %}" style="font-weight: bolder;margin-top: 5px;">Home</a>
+          <a class="navbar-brand" href="#contact" style="font-weight: bolder;margin-top: 5px;">Contact</a>
+          <a class="navbar-brand" href="{% url 'login' %}" title="Login" style="font-weight: bolder;margin-top: 5px;">Login</a>
         </div>
 
         <div class="nav navbar-header navbar-profile  pull-right">
@@ -151,7 +158,6 @@ h1 {
             </li>
           </ul>
         </div>
-
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
               <li class="active"><a href="{% url 'home' %}">Home</a></li>
